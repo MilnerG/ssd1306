@@ -89,10 +89,21 @@ Then add your user to the i2c group:
 
     $ sudo adduser pi i2c
 
-Install some packages:
+Install some packages (Python 2):
 
     $ sudo apt-get install i2c-tools python-smbus python-pip
+    
+Or (Python 3):
+
+    $ sudo apt-get install i2c-tools python3-smbus python3-pip libjpeg-dev
+    
+Install Pillow through pip (Python 2):
+
     $ sudo pip install pillow
+    
+Or (Python 3):
+
+    $ sudo pip3 install pillow
 
 Next check that the device is communicating properly (if using a rev.1 board, 
 use 0 for the bus not 1):
@@ -115,11 +126,15 @@ the device indicates it uses two addresses.
 
 # Installing the Python Package
 
-From the bash prompt, enter:
+From the bash prompt, enter (Python 2):
 
     $ sudo python setup.py install
 
-This will install the python files in `/usr/local/lib/python2.7`
+Or (Python 3):
+
+    $ sudo python3 setup.py install
+
+This will install the python files in `/usr/local/lib/python2.7` or `/usr/local/lib/python3.x`
 making them ready for use in other programs.
 
 # Software Display Driver
@@ -159,7 +174,7 @@ As soon as the with scope is ended, the resultant image is automatically
 flushed to the device's display memory and the ImageDraw object is
 garbage collected.
 
-Run the demos in the example directory:
+Run the demos in the example directory (Python 2 only):
 
     $ python examples/demo.py
     $ python examples/sys_info.py
